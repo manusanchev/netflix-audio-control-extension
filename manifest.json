@@ -1,0 +1,26 @@
+{
+  "manifest_version": 3,
+  "name": "Netflix Volume Control",
+  "version": "1.0",
+  "description": "Control the volume of Netflix with the mouse wheel.",
+  "permissions": ["activeTab"],
+  "content_scripts": [
+    {
+      "matches": ["https://www.netflix.com/watch/*"],
+      "js": ["inject.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "icons": {
+    "16": "assets/icon16.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["netflixVolumeControl.js"],
+      "matches": ["https://www.netflix.com/*"],
+      "use_dynamic_url": true
+    }
+  ]
+}
